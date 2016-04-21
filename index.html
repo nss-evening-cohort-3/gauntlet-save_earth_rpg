@@ -179,7 +179,7 @@
       </div><br><br><br><br>
 
       <div class="card__button">
-        <a class="card__link btn btn--big btn--orange" 
+        <a id="load_Combatants" class="card__link btn btn--big btn--orange" 
            href="#" 
            next="card--battleground">
           <span class="btn__prompt">></span>
@@ -203,23 +203,23 @@
 
       <div class="col-sm-6">
       <div id="goodGuy">
-        <span>Health: 90</span>
+        <span id="playerHealth">Health: 90</span>
         <div class="btn--big btn--yellow">
-          <span class="btn__text">Tim: Warrior</span>
+          <span id="playerInfo"class="btn__text">Tim: Warrior</span>
         </div>
-        <div>Weapon Attack PlaceHolder</div>
-        <div>Spell Attack PlaceHolder</div>
+        <div id="playerWeapon">Weapon Attack PlaceHolder</div>
+        <div id="playerSpell">Spell Attack PlaceHolder</div>
       </div>
       </div>
 
       <div class="col-sm-6">
       <div id="orc">
-        <span>Health: 90</span>
+        <span id="orcHealth">Health: 90</span>
         <div class="btn--big btn--orange">
-          <span class="btn__text">Orc: Ninja</span>
+          <span id="orcInfo" class="btn__text">Orc: Ninja</span>
         </div>
-        <div>Weapon Attack PlaceHolder</div>
-        <div>Spell Attack PlaceHolder</div>
+        <div id="orcWeapon">Weapon Attack PlaceHolder</div>
+        <div id="orcSpell">Spell Attack PlaceHolder</div>
       </div>
       </div><br><br><br><br><br>
 
@@ -236,6 +236,7 @@
   <script src="javascripts/player.js"></script>
   <script src="javascripts/enemies.js"></script>
   <script src="javascripts/app.js"></script>
+  <script src="javascripts/fight.js"></script>
 
 </body>
 </html>
