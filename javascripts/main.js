@@ -1,0 +1,1 @@
+var Gauntlet = (function(){})()
