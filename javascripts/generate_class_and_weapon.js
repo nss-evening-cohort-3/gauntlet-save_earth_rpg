@@ -88,6 +88,7 @@ orc.generateClass();
 // console.log(orc.toString());
 
 
+
 /*-------------------------
   Set Weapon
  -------------------------*/
@@ -130,9 +131,44 @@ var random = Math.round(Math.random() * 3);
   };
 
   //adjust hands
-  orc.weapon.damage *= 2/goodGuy.weapon.hands;
+  orc.weapon.damage *= 2/orc.weapon.hands;
 
 console.log("badGuy's weapon: ",orc.weapon);
+
+// NEED TO GENERATE SPELL??
+
+
+
+/*------------------------------
+  battleGround page initial set up
+ -------------------------------*/
+
+//capture playerName after clicking Select Class
+$("#selectClass").click(function(){
+  var playerName=$("#player-name").val();
+
+  //capture player className and health after clicking select weapon
+  $("#selectWeapon").click(function(){
+
+    //goodGuy's
+    $("#playerInfo").html(playerName+": "+goodGuy.class.name);
+    $("#playerHealth").html("<i>"+goodGuy.health+"</i>");
+
+    //orc's
+    $("#orcInfo").html("Orc: "+orc.class.name);
+    $("#orcHealth").html("<i>"+orc.health+"</i>");
+
+    $("#load_Combatants").click(function(){
+      $("#playerWeapon").html(goodGuy.weapon.name+", ");
+      $("#playerWeaponDamage").html(goodGuy.weapon.damage);
+
+      $("#orcWeapon").html(orc.weapon.name+", ");
+      $("#orcWeaponDamage").html(orc.weapon.damage);
+    })
+  });
+})
+
+
 
 
 

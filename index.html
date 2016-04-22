@@ -21,12 +21,12 @@
         </div>
       </div>
 
-      <div class="card__button">
+      <div class="card__button" id="selectClass">
         <a class="card__link btn btn--big btn--orange" 
            href="#" 
-           next="card--class">
-          <span class="btn__prompt">></span>
-          <span class="btn__text">Select class</span>
+           next="card--class" id="selectClass">
+          <span class="btn__prompt" id="selectClass">></span>
+          <span class="btn__text" id="selectClass">Select class</span>
         </a>
       </div>
     </section>
@@ -46,6 +46,7 @@
 
       <div class="container-fluid">
         <div class="row" id="classesSelection">
+
           <div class="col-sm-4">
             <div class="card__button" id='Warrior'>
               <a class="class__link btn btn--big btn--blue" href="#" id='Warrior'>
@@ -105,6 +106,7 @@
               </a>
             </div>
           </div>
+
           <div class="col-sm-4">
             <div class="card__button" id="Thief">
               <a class="class__link btn btn--big btn--blue" href="#" id="Thief">
@@ -134,15 +136,16 @@
               </a>
             </div>
           </div>
+
         </div>
       </div>
 
-      <div class="card__button">
+      <div class="card__button" id="selectWeapon">
         <a class="card__link btn btn--big btn--orange" 
            href="#" 
-           next="card--weapon">
-          <span class="btn__prompt">></span>
-          <span class="btn__text">Select weapon</span>
+           next="card--weapon" id="selectWeapon">
+          <span class="btn__prompt" id="selectWeapon">></span>
+          <span class="btn__text" id="selectWeapon">Select weapon</span>
         </a>
       </div>
     </section>
@@ -190,12 +193,12 @@
         </div>
       </div><br><br><br><br>
 
-      <div class="card__button">
+      <div class="card__button" id="load_Combatants">
         <a class="card__link btn btn--big btn--orange" 
            href="#" 
-           next="card--battleground">
-          <span class="btn__prompt">></span>
-          <span class="btn__text">defeat your enemies</span>
+           next="card--battleground" id="load_Combatants">
+          <span class="btn__prompt" id="load_Combatants">></span>
+          <span class="btn__text" id="load_Combatants">defeat your enemies</span>
         </a>
       </div>
     </section>
@@ -215,23 +218,37 @@
 
       <div class="col-sm-6">
       <div id="goodGuy">
-        <span>Health: 90</span>
+        <span>Health: </span><span id="playerHealth">90</span>
         <div class="btn--big btn--yellow">
-          <span class="btn__text">Tim: Warrior</span>
+          <span class="btn__text" id="playerInfo">Tim: Warrior</span>
         </div>
-        <div>Weapon Attack PlaceHolder</div>
-        <div>Spell Attack PlaceHolder</div>
+
+        <div>
+        <span>Weapon: </span>
+        <span id="playerWeapon">Weapon</span>
+        <span>Damage: </span>
+        <span id="playerWeaponDamage">4</span>
+        </div>
+
+        <div id="playerSpell">Spell Attack PlaceHolder</div>
       </div>
       </div>
 
       <div class="col-sm-6">
       <div id="badGuy">
-        <span>Health: 90</span>
+        <span>Health: </span><span id="orcHealth">90</span>
         <div class="btn--big btn--orange">
-          <span class="btn__text">Orc: Ninja</span>
+          <span class="btn__text" id="orcInfo">Orc: Ninja</span>
         </div>
-        <div>Weapon Attack PlaceHolder</div>
-        <div>Spell Attack PlaceHolder</div>
+
+        <div>
+        <span>Weapon: </span>
+        <span id="orcWeapon">Weapon</span>
+        <span>Damage: </span>
+        <span id="orcWeaponDamage">4</span>
+        </div>
+
+        <div id="orcSpell">Spell Attack PlaceHolder</div>
       </div>
       </div><br><br><br><br><br>
 
