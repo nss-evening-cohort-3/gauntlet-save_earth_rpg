@@ -152,11 +152,11 @@ $("#selectClass").click(function(){
 
     //goodGuy's
     $("#playerInfo").html(playerName+": "+goodGuy.class.name);
-    $("#playerHealth").html("<i>"+goodGuy.health+"</i>");
+    $("#playerHealth").html(goodGuy.health);
 
     //orc's
     $("#orcInfo").html("Orc: "+orc.class.name);
-    $("#orcHealth").html("<i>"+orc.health+"</i>");
+    $("#orcHealth").html(orc.health);
 
     $("#load_Combatants").click(function(){
       $("#playerWeapon").html(goodGuy.weapon.name+", ");
