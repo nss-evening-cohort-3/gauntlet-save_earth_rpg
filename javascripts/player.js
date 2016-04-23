@@ -57,6 +57,9 @@ originalGauntlet.Combatants.Player.prototype.generateClass = function() {
 
   // Add the health bonus
   this.health += this.class.healthBonus;
+  // NEW ADDED BY SYLVIA (I just feel if add health, let's just add strength and intelligence too)
+  this.strength+= this.class.strengthBonus||0;
+  this.intelligence+= this.class.intelligenceBonus||0;
   return this.class;
 };
 

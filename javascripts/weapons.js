@@ -11,21 +11,21 @@ var Gauntlet = (function(originalGauntlet){
   };
 
   Dagger = function() {
-    this.name = "dagger";
+    this.name = "Dagger";
     this.damage = 4;
     this.hands = 1;
   };
   Dagger.prototype = new originalGauntlet.Weapon();
 
   BroadSword = function() {
-    this.name = "broad sword";
+    this.name = "Broad Sword";
     this.damage = 14;
     this.hands = 2;
   };
   BroadSword.prototype = new originalGauntlet.Weapon();
 
   WarAxe = function() {
-    this.name = "war axe";
+    this.name = "War Axe";
     this.damage = 18;
     this.hands = 2;
   };
