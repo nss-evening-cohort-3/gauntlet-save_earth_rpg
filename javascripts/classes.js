@@ -1,7 +1,4 @@
 var Gauntlet = (function(originalGauntlet){
-/*
-  TODO: Modularize this code with IIFE or Browserify
- */
 
 originalGauntlet.GuildHall = {};
 

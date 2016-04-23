@@ -15,7 +15,7 @@ originalGauntlet.Combatants.Player = function(name) {
   this.weapon = null;
 
   this.playerName = name || "unknown adventurer";
-  this.health = Math.floor(Math.random() * 40 + 50);
+  this.health = Math.floor(Math.random() * 40 + 150);
   this.limbs = ["head", "neck", "arm", "leg", "torso"];
   this.skinColor = "gray";
   this.skinColors = [this.skinColor];
@@ -125,18 +125,6 @@ originalGauntlet.Combatants.Monster = function() {
   this.health = this.health - 30;
   this.intelligence = this.intelligence -20;
   this.strength = this.strength + 30;
-
-  //   this.generateSpecies = function() {
-  //   // Get a random index from the allowed classes array
-  //   var random = Math.round(Math.random() * 2);
-
-  //   // Get the string at the index
-  //   var randomClass = this.allowedClasses[random];
-
-  //   // Composes the corresponding player class into the player object
-  //   this.class = new originalGauntlet.GuildHall[randomClass]();
-  //   return this.class;
-  // }
 };
 
 originalGauntlet.Combatants.Monster.prototype = new originalGauntlet.Combatants.Player();
