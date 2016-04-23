@@ -34,18 +34,30 @@ $("#load_Combatants").click(function(){
 $("#attack").click(function(){
     battleStarted = true;
     orcAttack();
+    playerAttack();
     attackRoundCounter++;
 });
 
 function orcAttack() {
-    console.log(player.health);
     player.health = (player.health - (orc.weapon.damage * orc.weapon.hands));
-    console.log(player.health);
     $("#playerHealth").html(player.health.toString());
+    announceWinner();
 };
 
 function playerAttack() {
-    // use same logic as orcAttack() but include random number from spell. 
+    orc.health = (orc.health - (player.weapon.damage * player.weapon.hands));
+    $("#orcHealth").html(orc.health.toString());
+    announceWinner();
+};
+
+function announceWinner() {
+    if (orc.health <= 0) {
+        $("#attack").prop("disabled", true);
+        alert("Congratulations! You are the winner!");
+    } else if (player.health <= 0) {
+        $("#attack").prop("disabled", true);
+        alert("You lose!");
+    }
 };
 
 // when player or orc reaches zero, disable button and announce the winner
