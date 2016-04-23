@@ -13,11 +13,11 @@ var Gauntlet = (function(originalGauntlet){
 // orc.setWeapon(new BroadSword());
 // console.log(orc.toString());
 
-/*
-  Test code to generate a spell
- */
+// /*
+//   Test code to generate a spell
+//  */
 var spell = new originalGauntlet.SpellBook.Sphere();
-console.log("spell: ", spell.toString());
+// console.log("spell: ", spell.toString());
 
 
 $(document).ready(function() {
