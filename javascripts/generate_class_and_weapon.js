@@ -3,8 +3,15 @@ var Gauntlet = (function(originalGauntlet){
   Generate a goodGuy and an orc player
  -------------------------*/
 
-/*-----------Generate a goodGuy-----------*/
+//object is for return both purpose only
+var playerObj= {};
 var goodGuy;
+var orc;
+
+/*-----------Generate a goodGuy-----------*/
+originalGauntlet.setPlayers= function(){
+
+
 $("#classesSelection").click(function(event){
 
   //figure out if the goodGuy is a human, elf, Dwarf or surprise
@@ -16,7 +23,7 @@ $("#classesSelection").click(function(event){
     goodGuy = new originalGauntlet.Combatants.Human();
     //give the selected class to goodGuy.class
     goodGuy.class = new originalGauntlet.GuildHall[event.target.id]();
-    originalGauntlet.countBonusIn(goodGuy);
+    countBonusIn(goodGuy);
     
     break;
 
@@ -26,7 +33,7 @@ $("#classesSelection").click(function(event){
     case "Sorcerer":
     goodGuy = new originalGauntlet.Combatants.Elf();
     goodGuy.class = new originalGauntlet.GuildHall[event.target.id]();
-    originalGauntlet.countBonusIn(goodGuy);
+    countBonusIn(goodGuy);
     break;
 
     case "Warrior":
@@ -34,7 +41,7 @@ $("#classesSelection").click(function(event){
     case "Berserker":
     goodGuy = new originalGauntlet.Combatants.Dwarf();
     goodGuy.class = new originalGauntlet.GuildHall[event.target.id]();
-    originalGauntlet.countBonusIn(goodGuy);
+    countBonusIn(goodGuy);
     break;
 
     case "surpriseMe":
@@ -42,16 +49,13 @@ $("#classesSelection").click(function(event){
     break;
   };
 
-  console.log("GoodGuy's name: ",goodGuy.class.name);
-  console.log("GoodGuy's health",goodGuy.health);
-  console.log("GoodGuy's strength",goodGuy.strength);
-  console.log("GoodGuy's intelligence",goodGuy.intelligence);
+  console.log("GoodGuy: ",goodGuy);
 });
 
 
 //add healthBonus, strengthBonus and intelligenceBonus to health, strenghth and intelligence
 //(this function is for select a class only, not for surprise me (already count in player.js))
-originalGauntlet.countBonusIn= function(player){
+countBonusIn= function(player){
   player.health+=goodGuy.class.healthBonus||0;
   player.strength+=goodGuy.class.strengthBonus||0;
   player.intelligence+=goodGuy.class.intelligenceBonus||0;
@@ -59,7 +63,7 @@ originalGauntlet.countBonusIn= function(player){
   
   
 //if click "surprise me"
-originalGauntlet.randomAssignClassToGoodGuy = function(){
+randomAssignClassToGoodGuy = function(){
   var random = Math.round(Math.random() * 3);
   switch(random){
     case 0:
@@ -83,7 +87,7 @@ originalGauntlet.randomAssignClassToGoodGuy = function(){
 
 
 /*-----------Generate a badGuy-----------*/
-var orc = new originalGauntlet.Combatants.Orc();
+orc = new originalGauntlet.Combatants.Orc();
 orc.generateClass();
 // console.log(orc.toString());
 
@@ -115,7 +119,7 @@ orc.generateClass();
  })
 
 // badGuy's weapon random generation
-var random = Math.round(Math.random() * 3);
+var random = Math.round(Math.random() * 2);
   switch(random){
     case 0:
     orc.setWeapon(new Dagger());
@@ -164,15 +168,26 @@ $("#selectClass").click(function(){
 
       $("#orcWeapon").html(orc.weapon.name+", ");
       $("#orcWeaponDamage").html(orc.weapon.damage);
+
+      playerObj.goodGuy = goodGuy;
+      playerObj.orc= orc;
+
+      return playerObj;
     })
   });
 })
 
+};
 
-
+originalGauntlet.getPlayers= function(){
+  return playerObj;
+};
 
 
 
   return originalGauntlet;
 })(Gauntlet||{})
+
+Gauntlet.setPlayers();
+
 
