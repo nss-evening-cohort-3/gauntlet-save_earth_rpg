@@ -1,8 +1,9 @@
 var Gauntlet = (function(originalGauntlet){
 var orc;
-var player;
+var player;             
 var battleStarted = false;
-var attackCounter = 1;
+var attackRoundCounter = 1;
+var newPlayerHealth;
 
 // Clicking the button to take you to the battleground loads the two Combatants
 $("#load_Combatants").click(function(){
@@ -18,7 +19,6 @@ $("#load_Combatants").click(function(){
     console.log(tedTheHuman.toString());
     player = tedTheHuman;
 
-
     // new bad guy
     var evanTheOrc = new originalGauntlet.Combatants.Orc();
     evanTheOrc.generateClass();
@@ -33,16 +33,15 @@ $("#load_Combatants").click(function(){
 
 $("#attack").click(function(){
     battleStarted = true;
-    playerAttack();
     orcAttack();
-    attackCounter++;
+    attackRoundCounter++;
 });
 
-function orcAttack(startPlayerHealth) {
-    var startPlayerHealth = player.health;
-    var newPlayerHealth;
-    newPlayerHealth = startPlayerHealth - (orc.weapon.damage * orc.weapon.hands);
-    console.log(newPlayerHealth);
+function orcAttack() {
+    console.log(player.health);
+    player.health = (player.health - (orc.weapon.damage * orc.weapon.hands));
+    console.log(player.health);
+    $("#playerHealth").html(player.health.toString());
 };
 
 function playerAttack() {
@@ -51,6 +50,5 @@ function playerAttack() {
 
 // when player or orc reaches zero, disable button and announce the winner
 
-console.log("fight.js still up");
-  return originalGauntlet
+   return originalGauntlet
 })(Gauntlet || {})
