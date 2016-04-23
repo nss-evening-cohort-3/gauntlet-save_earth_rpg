@@ -36,9 +36,9 @@ $("#classesSelection").click(function(event){
     countBonusIn(goodGuy);
     break;
 
-    case "Warrior":
-    case "Valkyrie":
-    case "Berserker":
+    case "Thief":
+    case "Ninja":
+    case "Assassin":
     goodGuy = new originalGauntlet.Combatants.Dwarf();
     goodGuy.class = new originalGauntlet.GuildHall[event.target.id]();
     countBonusIn(goodGuy);
@@ -64,7 +64,7 @@ countBonusIn= function(player){
   
 //if click "surprise me"
 randomAssignClassToGoodGuy = function(){
-  var random = Math.round(Math.random() * 3);
+  var random = Math.round(Math.random() * 2);
   switch(random){
     case 0:
     goodGuy = new originalGauntlet.Combatants.Human();
@@ -99,6 +99,8 @@ orc.generateClass();
 
  // goodGuy's weapon: pick one;
  $("#weaponSelection").click(function(event){
+
+
   switch(event.target.id){
     case "Dagger":
     goodGuy.setWeapon(new Dagger());
