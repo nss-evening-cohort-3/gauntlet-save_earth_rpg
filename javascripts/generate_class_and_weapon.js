@@ -133,7 +133,7 @@ generateBadGuy();
     playerObj.goodGuy.setWeapon(new Dagger());
     break;
 
-    case "BoardSword":
+    case "BroadSword":
     playerObj.goodGuy.setWeapon(new BroadSword());
     break;
 
