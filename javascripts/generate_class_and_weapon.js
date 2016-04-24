@@ -22,7 +22,6 @@ $("#classesSelection").click(function(event){
     //give the selected class to goodGuy.class
     playerObj.goodGuy.class = new originalGauntlet.GuildHall[event.target.id]();
     countBonusIn(playerObj.goodGuy);
-    
     break;
 
     case "Shaman":

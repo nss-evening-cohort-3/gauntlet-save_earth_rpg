@@ -14,11 +14,20 @@ $("#load_Combatants").click(function(){
 });
 
 $("#attack").click(function(){
-    battleStarted = true;
-    enemyAttack();
-    playerAttack();
-    announceWinner();
-    attackRoundCounter++;
+    //whoever has less health attack first
+    if(player.health>=enemy.health){
+        battleStarted = true;
+        enemyAttack();
+        playerAttack();
+        announceWinner();
+        attackRoundCounter++;
+    } else {
+        battleStarted = true;
+        playerAttack();
+        enemyAttack();
+        announceWinner();
+        attackRoundCounter++;
+    }
 });
 
 function enemyAttack() {
