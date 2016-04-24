@@ -106,7 +106,7 @@ orc.generateClass();
     goodGuy.setWeapon(new Dagger());
     break;
 
-    case "BoardSword":
+    case "BroadSword":
     goodGuy.setWeapon(new BroadSword());
     break;
 
