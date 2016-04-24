@@ -1,72 +1,57 @@
 var Gauntlet = (function(originalGauntlet){
-            
+var playersObj = {};
+var enemy;
+var player;             
 var battleStarted = false;
 var attackRoundCounter = 1;
 var newPlayerHealth;
 
 // Clicking the button to take you to the battleground loads the two Combatants
-// $("#load_Combatants").click(function(){
-    
-    // console.log(orc);
-
-
-//     // new good guy. NOTE THAT THIS WILL BE BUILT WITH THE SERIES OF QUESTIONS GOING FORWARD.
-//     var tedTheHuman = new originalGauntlet.Combatants.Human();
-//     tedTheHuman.setWeapon(new WarAxe());
-//     tedTheHuman.generateClass();  // This will be used for "Surprise me" option
-//     $("#playerHealth").html(tedTheHuman.health.toString());
-//     // $("#playerInfo").html(tedTheHuman.name.toString());
-//     $("#playerWeapon").html(tedTheHuman.weapon.toString());
-//     // $("#playerSpell").html(spell.toString()); //Need to connect player spell 
-//     console.log(tedTheHuman.toString());
-//     player = tedTheHuman;
-
-//     // new bad guy
-//     var evanTheOrc = new originalGauntlet.Combatants.Orc();
-//     evanTheOrc.generateClass();
-//     evanTheOrc.setWeapon(new BroadSword());
-//     $("#orcHealth").html(evanTheOrc.health.toString());
-//     // $("#orcInfo").html(evanTheOrc.name.toString());
-//     $("#orcWeapon").html(evanTheOrc.weapon.toString());   
-//     console.log(tedTheHuman, evanTheOrc);
-//     orc = evanTheOrc;
-
-// });
+$("#load_Combatants").click(function(){
+    playersObj = originalGauntlet.getPlayers();
+    enemy = playersObj.badGuy;
+    player = playersObj.goodGuy;
+});
 
 $("#attack").click(function(){
-    var twoPlayers= Gauntlet.getPlayers();
-    var player=twoPlayers.goodGuy;
-    var orc= twoPlayers.orc;
-
     battleStarted = true;
-    orcAttack();
+    enemyAttack();
     playerAttack();
+    announceWinner();
     attackRoundCounter++;
-
-
-    function orcAttack() {
-        player.health = (player.health - orc.weapon.damage);
-        $("#playerHealth").html(player.health.toString());
-        announceWinner();
-    };
-
-    function playerAttack() {
-        orc.health = (orc.health - player.weapon.damage);
-        $("#orcHealth").html(orc.health.toString());
-        announceWinner();
-    };
-
-    // when player or orc reaches zero, disable button and announce the winner
-    function announceWinner() {
-        if (orc.health <= 0) {
-            $("#attack").prop("disabled", true);
-            alert("Congratulations! You are the winner!");
-        } else if (player.health <= 0) {
-            $("#attack").prop("disabled", true);
-            alert("You lose!");
-        }
-    };
 });
+
+function enemyAttack() {
+    //checks for 1-h weapons, mulitplies them by 2
+    if (enemy.weapon.hands === 1){
+        player.health = (player.health - (enemy.weapon.damage * 2));
+        $("#playerHealth").html(player.health.toString());
+    } else {
+        player.health = (player.health - enemy.weapon.damage);
+        $("#playerHealth").html(player.health.toString());
+    }
+};
+
+function playerAttack() {
+    //checks for 1-h weapons, mulitplies them by 2
+    if (player.weapon.hands === 1){
+        enemy.health = (enemy.health - (player.weapon.damage * 2));
+        $("#orcHealth").html(enemy.health.toString());
+    } else {
+        enemy.health = (enemy.health - player.weapon.damage);
+        $("#orcHealth").html(enemy.health.toString());
+    }
+};
+
+function announceWinner() {
+    if (enemy.health <= 0) {
+        $("#attack").prop("disabled", true);
+        alert("Congratulations! You are the winner!");
+    } else if (player.health <= 0) {
+        $("#attack").prop("disabled", true);
+        alert("You lose!");
+    }
+};
 
 
    return originalGauntlet
