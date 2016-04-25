@@ -55,10 +55,12 @@ function playerAttack() {
 function announceWinner() {
     if (enemy.health <= 0) {
         $("#attack").prop("disabled", true);
-        alert("Congratulations! You are the winner!");
+        $("#myModal").modal("show");
+        $("#winnerText").html("<h3>You are the winner!</h3>").append(`<h3>The battle lasted ${attackRoundCounter} rounds!`)
     } else if (player.health <= 0) {
         $("#attack").prop("disabled", true);
-        alert("You lose!");
+        $("#myModal").modal("show");
+        $("#winnerText").html("<h3>You lose!</h3>").append(`<h3>The battle lasted ${attackRoundCounter} rounds!`);
     }
 };
 

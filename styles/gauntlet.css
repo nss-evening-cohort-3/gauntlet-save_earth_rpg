@@ -116,3 +116,13 @@ button#attack{
   display: block;
   margin: 0 auto;
 }
+
+/* Modal */
+#myModalLabel {
+  font-size: 1em;
+  font-family: 'Droid Serif', serif;
+  text-align: center;
+}
+
+/*#winnerText {
+}*/

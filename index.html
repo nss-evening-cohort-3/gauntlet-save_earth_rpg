@@ -7,6 +7,7 @@
   <link href='https://fonts.googleapis.com/css?family=Lato:400,300,700' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="styles/gauntlet.css">
+  <link href='https://fonts.googleapis.com/css?family=Droid+Serif:700italic' rel='stylesheet' type='text/css'>
 </head>
 
 <body>
@@ -259,9 +260,22 @@
 
       <button id="attack" class="btn--big">Attack</button>
 
+      <!-- Announce winner Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title" id="myModalLabel">(In weird cockney voice) Twas a glorious battle, Sire!</h4>
+        <h3 id="winnerText">Here's where stats and winner is announced.</h3>
+      </div>
+    </div>
+  </div>
+</div>
+
     </section>
   </article>
   <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
   <script src="javascripts/main.js"></script>
   <script src="javascripts/fight.js"></script>
   <script src="javascripts/weapons.js"></script>
