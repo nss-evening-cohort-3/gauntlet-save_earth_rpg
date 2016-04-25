@@ -1,3 +1,5 @@
+var globalSpecies = "";
+
 var Gauntlet = (function(originalGauntlet){
   /*-------------------------
   Generate a goodGuy and an orc player
@@ -25,6 +27,7 @@ $("#classesSelection").click(function(event){
     goodGuy.class = new originalGauntlet.GuildHall[event.target.id]();
     countBonusIn(goodGuy);
     
+//    originalGauntlet.countBonusIn(goodGuy);
     break;
 
     case "Shaman":
@@ -45,11 +48,11 @@ $("#classesSelection").click(function(event){
     break;
 
     case "surpriseMe":
-    originalGauntlet.randomAssignClassToGoodGuy();
+    randomAssignClassToGoodGuy();
     break;
   };
 
-  console.log("GoodGuy: ",goodGuy);
+  globalSpecies = goodGuy.species;
 });
 
 
@@ -68,7 +71,6 @@ randomAssignClassToGoodGuy = function(){
   switch(random){
     case 0:
     goodGuy = new originalGauntlet.Combatants.Human();
-
     break;
 
     case 1:
@@ -117,8 +119,17 @@ orc.generateClass();
 
   //if hands=1, then give two same weapon, which means damage*2
   goodGuy.weapon.damage *= 2/goodGuy.weapon.hands;
-  console.log("goodGuy's weapon: ", goodGuy.weapon);
+  // console.log("goodGuy's weapon: ", goodGuy.weapon);
  })
+
+$("#spellSelection").click(function(event){
+    switch(event.target.id){
+      case "Sphere":
+      goodGuy.setWeapon(new originalGauntlet.SpellBook.Sphere());
+      // console.log("goodGuy's weaponfff: ", goodGuy.weapon.name);
+      break;
+    }
+  })
 
 // badGuy's weapon random generation
 var random = Math.round(Math.random() * 2);
@@ -165,6 +176,21 @@ $("#selectClass").click(function(){
     $("#orcHealth").html(orc.health);
 
     $("#load_Combatants").click(function(){
+      alert(goodGuy.weapon.name);
+      $("#playerWeapon").html(goodGuy.weapon.name+", ");
+      $("#playerWeaponDamage").html(goodGuy.weapon.damage);
+
+      $("#orcWeapon").html(orc.weapon.name+", ");
+      $("#orcWeaponDamage").html(orc.weapon.damage);
+
+      playerObj.goodGuy = goodGuy;
+      playerObj.orc= orc;
+
+      return playerObj;
+    })
+
+    $("#load_Combatants_spell").click(function(){
+      alert(goodGuy.weapon.name);
       $("#playerWeapon").html(goodGuy.weapon.name+", ");
       $("#playerWeaponDamage").html(goodGuy.weapon.damage);
 

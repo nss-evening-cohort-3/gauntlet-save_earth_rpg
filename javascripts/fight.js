@@ -43,7 +43,14 @@ $("#attack").click(function(){
     playerAttack();
     attackRoundCounter++;
 
-
+// <<<<<<< Updated upstream
+// 
+//     function orcAttack() {
+//         player.health = (player.health - orc.weapon.damage);
+//         $("#playerHealth").html(player.health.toString());
+//         announceWinner();
+//     };
+// =======
     function orcAttack() {
         player.health = (player.health - orc.weapon.damage);
         $("#playerHealth").html(player.health.toString());
@@ -55,6 +62,13 @@ $("#attack").click(function(){
         $("#orcHealth").html(orc.health.toString());
         announceWinner();
     };
+            // >>>>>>> Stashed changes
+
+        function playerAttack() {
+            orc.health = (orc.health - player.weapon.damage);
+            $("#orcHealth").html(orc.health.toString());
+            announceWinner();
+        };
 
     // when player or orc reaches zero, disable button and announce the winner
     function announceWinner() {
