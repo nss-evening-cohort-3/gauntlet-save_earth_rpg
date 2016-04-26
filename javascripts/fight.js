@@ -20,7 +20,6 @@ $("#load_Combatants_spell").click(function(){
 });
 
 $("#attack").click(function(){
-
     //whoever has less health attack first
     if(player.health>=enemy.health){
         battleStarted = true;
@@ -47,7 +46,6 @@ function enemyAttack() {
         $("#playerHealth").html(player.health.toString());
     }
 };
-
 
 function playerAttack() {
     //checks for 1-h weapons, mulitplies them by 2

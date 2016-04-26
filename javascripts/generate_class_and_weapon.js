@@ -47,7 +47,6 @@ $("#classesSelection").click(function(event){
     randomAssignClassToGoodGuy();
     break;
   };
-
   globalSpecies = playerObj.goodGuy.species;
 });
 }
@@ -184,7 +183,6 @@ $("#selectClass").click(function(){
     $("#load_Combatants_spell").click(function(){
       $("#playerWeapon").html(playerObj.goodGuy.weapon.name+", ");
       $("#playerWeaponDamage").html(playerObj.goodGuy.weapon.damage);
-
       $("#orcWeapon").html(playerObj.badGuy.weapon.name+", ");
       $("#orcWeaponDamage").html(playerObj.badGuy.weapon.damage);
 
