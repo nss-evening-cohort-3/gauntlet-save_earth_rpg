@@ -1,3 +1,5 @@
+var globalSpecies = "";
+
 var Gauntlet = (function(originalGauntlet){
   /*-------------------------
   Generate a goodGuy and an badGuy player
@@ -45,6 +47,7 @@ $("#classesSelection").click(function(event){
     randomAssignClassToGoodGuy();
     break;
   };
+  globalSpecies = playerObj.goodGuy.species;
 });
 }
 
@@ -63,7 +66,6 @@ randomAssignClassToGoodGuy = function(){
   switch(random){
     case 0:
     playerObj.goodGuy = new originalGauntlet.Combatants.Human();
-
     break;
 
     case 1:
@@ -125,8 +127,6 @@ generateBadGuy();
 
  // goodGuy's weapon: pick one;
  $("#weaponSelection").click(function(event){
-
-
   switch(event.target.id){
     case "Dagger":
     playerObj.goodGuy.setWeapon(new Dagger());
@@ -140,6 +140,10 @@ generateBadGuy();
     playerObj.goodGuy.setWeapon(new WarAxe());
     break;
   };
+
+})
+ $("#spellSelection").click(function(event){
+      playerObj.goodGuy.setWeapon(new originalGauntlet.SpellBook.Sphere());
  })
 
 
@@ -170,6 +174,15 @@ $("#selectClass").click(function(){
       $("#playerWeapon").html(playerObj.goodGuy.weapon.name+", ");
       $("#playerWeaponDamage").html(playerObj.goodGuy.weapon.damage);
 
+      $("#orcWeapon").html(playerObj.badGuy.weapon.name+", ");
+      $("#orcWeaponDamage").html(playerObj.badGuy.weapon.damage);
+
+      return playerObj;
+    })
+
+    $("#load_Combatants_spell").click(function(){
+      $("#playerWeapon").html(playerObj.goodGuy.weapon.name+", ");
+      $("#playerWeaponDamage").html(playerObj.goodGuy.weapon.damage);
       $("#orcWeapon").html(playerObj.badGuy.weapon.name+", ");
       $("#orcWeaponDamage").html(playerObj.badGuy.weapon.damage);
 
