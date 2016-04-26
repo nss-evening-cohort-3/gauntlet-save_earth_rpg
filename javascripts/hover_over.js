@@ -206,17 +206,90 @@ $("#selectWeapon").click(function(){
     $(this).fadeIn(500);
   });
 
+  //Hover Over Flail
+  $("#Flail").hover(
+  function() {
+    showInfo = new Flail();
+    $(this).append($("<span>Damage: "+showInfo.damage+"<br> Hand(s): "+showInfo.hands+"</span>"));
+  }, function() {
+    $(this).find("span:last").remove();
+    });
+ 
+  $( "#Flail.fade" ).hover(function() {
+    $(this).fadeOut(100);
+    $(this).fadeIn(500);
+  });
 
+  //Hover Over Hatchet
+  $("#Hatchet").hover(
+  function() {
+    showInfo = new Hatchet();
+    $(this).append($("<span>Damage: "+showInfo.damage+"<br> Hand(s): "+showInfo.hands+"</span>"));
+  }, function() {
+    $(this).find("span:last").remove();
+    });
 
+  $( "#Hatchet.fade" ).hover(function() {
+    $(this).fadeOut(100);
+    $(this).fadeIn(500);
+  });
 
+  //Hover Over WarSword
+  $("#WarSword").hover(
+  function() {
+    showInfo = new WarSword();
+    $(this).append($("<span>Damage: "+showInfo.damage+"<br> Hand(s): "+showInfo.hands+"</span>"));
+  }, function() {
+    $(this).find("span:last").remove();
+    });
+ 
+  $( "#WarSword.fade" ).hover(function() {
+    $(this).fadeOut(100);
+    $(this).fadeIn(500);
+  });
 
+  //Hover Over Battle Axe
+  $("#BattleAxe").hover(
+  function() {
+    showInfo = new BattleAxe();
+    $(this).append($("<span>Damage: "+showInfo.damage+"<br> Hand(s): "+showInfo.hands+"</span>"));
+  }, function() {
+    $(this).find("span:last").remove();
+    });
+ 
+  $( "#BattleAxe.fade" ).hover(function() {
+    $(this).fadeOut(100);
+    $(this).fadeIn(500);
+  });
 
+  //Hover Over Spear
+  $("#Spear").hover(
+  function() {
+    showInfo = new Spear();
+    $(this).append($("<span>Damage: "+showInfo.damage+"<br> Hand(s): "+showInfo.hands+"</span>"));
+  }, function() {
+    $(this).find("span:last").remove();
+    });
+ 
+  $( "#Spear.fade" ).hover(function() {
+    $(this).fadeOut(100);
+    $(this).fadeIn(500);
+  });
 
-
-
-
-
-
+  //Hover Over Battle Hammer
+  $("#BattleHammer").hover(
+  function() {
+    showInfo = new BattleHammer();
+    $(this).append($("<span>Damage: "+showInfo.damage+"<br> Hand(s): "+showInfo.hands+"</span>"));
+  }, function() {
+    $(this).find("span:last").remove();
+    });
+ 
+  $( "#BattleHammer.fade" ).hover(function() {
+    $(this).fadeOut(100);
+    $(this).fadeIn(500);
+  });
+  
 });
 
 
