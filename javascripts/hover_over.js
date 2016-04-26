@@ -116,34 +116,48 @@ $("#selectClass").click(function(){
 $("#selectWeapon").click(function(){ 
   var showInfo;
 
+  // //Hover Over Dagger
+  // $("#Dagger").hover(
+  // function() {
+  //   showInfo = new Dagger();
+  //   $("#Dagger").attr("data-toggle", "tooltip");
+  //   $("#Dagger").attr("data-placement", "top");
+  //   $("#Dagger").attr("title", `Damage bonus of +${showInfo.damage} Number of hands ${showInfo.hands}`);
+  //   });
+
+  // //Hover Over Broadsword
+  // $("#Broadsword").hover(
+  // function() {
+  //   showInfo = new BroadSword();
+  //   $("#Broadsword").attr("data-toggle", "tooltip");
+  //   $("#Broadsword").attr("data-placement", "top");
+  //   $("#Broadsword").attr("title", `Damage bonus of +${showInfo.damage} Number of hands ${showInfo.hands}`);
+  //   });
+
+  // //Hover Over WarAxe
+  // $("#WarAxe").hover(
+  // function() {
+  //   showInfo = new WarAxe();
+  //   $("#WarAxe").attr("data-toggle", "tooltip");
+  //   $("#WarAxe").attr("data-placement", "top");
+  //   $("#WarAxe").attr("title", `Damage bonus of +${showInfo.damage} Number of hands ${showInfo.hands}`);
+  //   });
+ 
+  // $( "#WarAxe.fade" ).hover(function() {
+  //   $(this).fadeOut(100);
+  //   $(this).fadeIn(500);
+  // });
+  
   //Hover Over Dagger
   $("#Dagger").hover(
   function() {
     showInfo = new Dagger();
-    $("#Dagger").attr("data-toggle", "tooltip");
-    $("#Dagger").attr("data-placement", "top");
-    $("#Dagger").attr("title", `Damage bonus of +${showInfo.damage} Number of hands ${showInfo.hands}`);
-    });
-
-  //Hover Over Broadsword
-  $("#Broadsword").hover(
-  function() {
-    showInfo = new BroadSword();
-    $("#Broadsword").attr("data-toggle", "tooltip");
-    $("#Broadsword").attr("data-placement", "top");
-    $("#Broadsword").attr("title", `Damage bonus of +${showInfo.damage} Number of hands ${showInfo.hands}`);
-    });
-
-  //Hover Over WarAxe
-  $("#WarAxe").hover(
-  function() {
-    showInfo = new WarAxe();
-    $("#WarAxe").attr("data-toggle", "tooltip");
-    $("#WarAxe").attr("data-placement", "top");
-    $("#WarAxe").attr("title", `Damage bonus of +${showInfo.damage} Number of hands ${showInfo.hands}`);
+    $(this).append($("<span>Damage: "+showInfo.damage+"<br> Hand(s): "+showInfo.hands+"</span>"));
+  }, function() {
+    $(this).find("span:last").remove();
     });
  
-  $( "#WarAxe.fade" ).hover(function() {
+  $( "#Dagger.fade" ).hover(function() {
     $(this).fadeOut(100);
     $(this).fadeIn(500);
   });
@@ -228,6 +242,21 @@ $("#selectWeapon").click(function(){
     });
  
   $( "#BattleHammer.fade" ).hover(function() {
+    $(this).fadeOut(100);
+    $(this).fadeIn(500);
+  });
+
+
+  //Hover Over Broad Sword
+  $("#BroadSword").hover(
+  function() {
+    showInfo = new BroadSword();
+    $(this).append($("<span>Damage: "+showInfo.damage+"<br> Hand(s): "+showInfo.hands+"</span>"));
+  }, function() {
+    $(this).find("span:last").remove();
+    });
+ 
+  $( "#BroadSword.fade" ).hover(function() {
     $(this).fadeOut(100);
     $(this).fadeIn(500);
   });
