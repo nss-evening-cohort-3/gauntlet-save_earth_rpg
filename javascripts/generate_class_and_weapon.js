@@ -46,6 +46,9 @@ $("#classesSelection").click(function(event){
     case "surpriseMe":
     randomAssignClassToGoodGuy();
     break;
+
+    default:
+    randomAssignClassToGoodGuy();
   };
   globalSpecies = playerObj.goodGuy.species;
 });
