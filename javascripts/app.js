@@ -16,7 +16,7 @@ var Gauntlet = (function(originalGauntlet){
 // /*
 //   Test code to generate a spell
 //  */
-var spell = new originalGauntlet.SpellBook.Sphere();
+// var spell = new originalGauntlet.SpellBook.Sphere();
 // console.log("spell: ", spell.toString());
 
 
@@ -33,7 +33,6 @@ $(document).ready(function() {
   $(".card__link").click(function(e) {
     var nextCard = $(this).attr("next");
     var moveAlong = false;
-
     switch (nextCard) {
       case "card--class":
         moveAlong = ($("#player-name").val() !== "");
@@ -48,6 +47,9 @@ $(document).ready(function() {
 
     if (moveAlong) {
       $(".card").hide();
+      if ((nextCard === "card--weapon") && (globalSpecies === "Elf")) {
+        nextCard = "card--spell";
+      }
       $("." + nextCard).show();
     }
   });
@@ -58,6 +60,9 @@ $(document).ready(function() {
   $(".card__back").click(function(e) {
     var previousCard = $(this).attr("previous");
     $(".card").hide();
+    if ((previousCard === "card--weapon") && (globalSpecies === "Elf")) {
+        previousCard = "card--spell";
+      }
     $("." + previousCard).show();
   });
 

@@ -13,6 +13,12 @@ $("#load_Combatants").click(function(){
     player = playersObj.goodGuy;
 });
 
+$("#load_Combatants_spell").click(function(){
+    playersObj = originalGauntlet.getPlayers();
+    enemy = playersObj.badGuy;
+    player = playersObj.goodGuy;
+});
+
 $("#attack").click(function(){
     //whoever has less health attack first
     if(player.health>=enemy.health){

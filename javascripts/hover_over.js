@@ -1,8 +1,11 @@
 var Gauntlet = (function(originalGauntlet){
  originalGauntlet.hoverOver= function(){
+
+  
+
 /*-----Classes' Hover Over-----*/ 
 $("#selectClass").click(function(){
- // var showInfo;
+ var showInfo;
 
   // Initiate jQuery ToolTip 
   $(function() {
@@ -119,7 +122,7 @@ $("#selectWeapon").click(function(){
     showInfo = new Dagger();
     $("#Dagger").attr("data-toggle", "tooltip");
     $("#Dagger").attr("data-placement", "top");
-    $("#Dagger").attr("title", `HealthBonus of +${showInfo.damage} StrengthBonus of +${showInfo.hands}`);
+    $("#Dagger").attr("title", `Damage bonus of +${showInfo.damage} Number of hands ${showInfo.hands}`);
     });
 
   //Hover Over Broadsword
@@ -128,7 +131,7 @@ $("#selectWeapon").click(function(){
     showInfo = new BroadSword();
     $("#Broadsword").attr("data-toggle", "tooltip");
     $("#Broadsword").attr("data-placement", "top");
-    $("#Broadsword").attr("title", `HealthBonus of +${showInfo.damage} StrengthBonus of +${showInfo.hands}`);
+    $("#Broadsword").attr("title", `Damage bonus of +${showInfo.damage} Number of hands ${showInfo.hands}`);
     });
 
   //Hover Over WarAxe
@@ -137,24 +140,8 @@ $("#selectWeapon").click(function(){
     showInfo = new WarAxe();
     $("#WarAxe").attr("data-toggle", "tooltip");
     $("#WarAxe").attr("data-placement", "top");
-    $("#WarAxe").attr("title", `HealthBonus of +${showInfo.damage} StrengthBonus of +${showInfo.hands}`);
+    $("#WarAxe").attr("title", `Damage bonus of +${showInfo.damage} Number of hands ${showInfo.hands}`);
     });
-
-
-
-
-  // $("#WarAxe").hover(
-  // function() {
-  //   showInfo = new WarAxe();
-  //   $(this).append($("<span>Damage: "+showInfo.damage+"<br> Hand(s): "+showInfo.hands+"</span>"));
-  // }, function() {
-  //   $(this).find("span:last").remove();
-  //   });
- 
-  // $( "#WarAxe.fade" ).hover(function() {
-  //   $(this).fadeOut(100);
-  //   $(this).fadeIn(500);
-  // });
 });
 };
 return originalGauntlet;
