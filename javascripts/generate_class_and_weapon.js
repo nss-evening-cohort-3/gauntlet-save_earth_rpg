@@ -24,6 +24,7 @@ $("#classesSelection").click(function(event){
     //give the selected class to goodGuy.class
     playerObj.goodGuy.class = new originalGauntlet.GuildHall[event.target.id]();
     countBonusIn(playerObj.goodGuy);
+    $("#selectWeapon.btn__text").html("Select Weapon");
     break;
 
     case "Shaman":
@@ -33,6 +34,8 @@ $("#classesSelection").click(function(event){
     playerObj.goodGuy = new originalGauntlet.Combatants.Elf();
     playerObj.goodGuy.class = new originalGauntlet.GuildHall[event.target.id]();
     countBonusIn(playerObj.goodGuy);
+    $("#selectWeapon.btn__text").html("Select Spell");
+    $("#weaponOrSpell").html("Spell: ")
     break;
 
     case "Thief":
@@ -41,11 +44,15 @@ $("#classesSelection").click(function(event){
     playerObj.goodGuy = new originalGauntlet.Combatants.Dwarf();
     playerObj.goodGuy.class = new originalGauntlet.GuildHall[event.target.id]();
     countBonusIn(playerObj.goodGuy);
+    $("#selectWeapon.btn__text").html("Select Weapon");
     break;
 
     case "surpriseMe":
     randomAssignClassToGoodGuy();
     break;
+
+    default:
+    randomAssignClassToGoodGuy();
   };
   globalSpecies = playerObj.goodGuy.species;
 });
@@ -201,7 +208,7 @@ $("#selectClass").click(function(){
     })
 
     $("#load_Combatants_spell").click(function(){
-      $("#playerWeapon").html(playerObj.goodGuy.weapon.name+", ");
+      $("#playerWeapon").html(playerObj.goodGuy.weapon.name+" of "+playerObj.goodGuy.weapon.type+", ");
       $("#playerWeaponDamage").html(playerObj.goodGuy.weapon.damage);
       $("#orcWeapon").html(playerObj.badGuy.weapon.name+", ");
       $("#orcWeaponDamage").html(playerObj.badGuy.weapon.damage);
