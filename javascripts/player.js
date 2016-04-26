@@ -133,5 +133,21 @@ originalGauntlet.Combatants.Monster = function() {
 
 originalGauntlet.Combatants.Monster.prototype = new originalGauntlet.Combatants.Player();
 
+
+
+
+
+
+
   return originalGauntlet
 })(Gauntlet || {})
+
+
+
+
+
+
+
+
+
+

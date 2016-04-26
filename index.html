@@ -7,6 +7,7 @@
   <link href='https://fonts.googleapis.com/css?family=Lato:400,300,700' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="styles/gauntlet.css">
+  <link href='https://fonts.googleapis.com/css?family=Droid+Serif:700italic' rel='stylesheet' type='text/css'>
 </head>
 
 <body>
@@ -174,10 +175,10 @@
           </div>
 
           <div class="col-sm-4">
-            <div class="card__button" id="BoardSword">
-              <a class="class__link btn btn--big btn--blue" href="#" id="BoardSword">
-                <span class="btn__prompt" id="BoardSword">></span>
-                <span class="btn__text" id="BoardSword">BroadSword</span>
+            <div class="card__button" id="BroadSword">
+              <a class="class__link btn btn--big btn--blue" href="#" id="BroadSword">
+                <span class="btn__prompt" id="BroadSword">></span>
+                <span class="btn__text" id="BroadSword">BroadSword</span>
               </a>
             </div>
           </div>
@@ -218,10 +219,10 @@
       <div class="container-fluid">
         <div class="row" id="spellSelection">
           <div class=" col-sm-offset-4 col-sm-4">
-            <div class="card__button" id="Sphere">
-              <a class="class__link btn btn--big btn--blue" href="#" id="Sphere">
-                <span class="btn__prompt" id="Sphere">></span>
-                <span class="btn__text" id="Sphere">Sphere Spell</span>
+            <div class="card__button" id="sphere">
+              <a class="class__link btn btn--big btn--blue" href="#" id="sphere">
+                <span class="btn__prompt" id="sphere">></span>
+                <span class="btn__text" id="sphere">Sphere Spell</span>
               </a>
             </div>
           </div>
@@ -294,17 +295,31 @@
 
       <button id="attack" class="btn--big">Attack</button>
 
+      <!-- Announce winner Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title" id="myModalLabel">(In weird cockney voice) Twas a glorious battle, Sire!</h4>
+        <h3 id="winnerText">Here's where stats and winner is announced.</h3>
+      </div>
+    </div>
+  </div>
+</div>
+
     </section>
   </article>
   <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
   <script src="javascripts/main.js"></script>
+  <script src="javascripts/fight.js"></script>
   <script src="javascripts/weapons.js"></script>
   <script src="javascripts/classes.js"></script>
   <script src="javascripts/spells.js"></script>
   <script src="javascripts/player.js"></script>
   <script src="javascripts/enemies.js"></script>
   <script src="javascripts/app.js"></script>
-  <script src="javascripts/fight.js"></script>
   <script src="javascripts/generate_class_and_weapon.js"></script>
+  <script src="javascripts/hover_over.js"></script>
 </body>
 </html>
