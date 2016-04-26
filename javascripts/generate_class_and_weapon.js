@@ -24,6 +24,7 @@ $("#classesSelection").click(function(event){
     //give the selected class to goodGuy.class
     playerObj.goodGuy.class = new originalGauntlet.GuildHall[event.target.id]();
     countBonusIn(playerObj.goodGuy);
+    $("#selectWeapon.btn__text").html("Select Weapon");
     break;
 
     case "Shaman":
@@ -33,6 +34,8 @@ $("#classesSelection").click(function(event){
     playerObj.goodGuy = new originalGauntlet.Combatants.Elf();
     playerObj.goodGuy.class = new originalGauntlet.GuildHall[event.target.id]();
     countBonusIn(playerObj.goodGuy);
+    $("#selectWeapon.btn__text").html("Select Spell");
+    $("#weaponOrSpell").html("Spell: ")
     break;
 
     case "Thief":
@@ -41,6 +44,7 @@ $("#classesSelection").click(function(event){
     playerObj.goodGuy = new originalGauntlet.Combatants.Dwarf();
     playerObj.goodGuy.class = new originalGauntlet.GuildHall[event.target.id]();
     countBonusIn(playerObj.goodGuy);
+    $("#selectWeapon.btn__text").html("Select Weapon");
     break;
 
     case "surpriseMe":
