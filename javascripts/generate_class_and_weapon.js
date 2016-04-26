@@ -181,7 +181,7 @@ $("#selectClass").click(function(){
     })
 
     $("#load_Combatants_spell").click(function(){
-      $("#playerWeapon").html(playerObj.goodGuy.weapon.name+", ");
+      $("#playerWeapon").html(playerObj.goodGuy.weapon.name+" of "+playerObj.goodGuy.weapon.type+", ");
       $("#playerWeaponDamage").html(playerObj.goodGuy.weapon.damage);
       $("#orcWeapon").html(playerObj.badGuy.weapon.name+", ");
       $("#orcWeaponDamage").html(playerObj.badGuy.weapon.damage);
