@@ -110,7 +110,7 @@ var generateBadGuy = function(){
     countBonusIn(playerObj.badGuy);
   };  
   // then randomly selects weapon for enemy
-  var random = Math.floor(Math.random() * 3);
+  var random = Math.floor(Math.random() * 6);
     switch(random){
       case 0:
       playerObj.badGuy.setWeapon(new Dagger());
@@ -121,7 +121,27 @@ var generateBadGuy = function(){
       break;
 
       case 2:
-      playerObj.badGuy.setWeapon(new WarAxe());
+      playerObj.badGuy.setWeapon(new BattleAxe());
+      break;
+
+      case 3:
+      playerObj.badGuy.setWeapon(new Flail());
+      break;
+
+      case 4:
+      playerObj.badGuy.setWeapon(new Hatchet());
+      break;
+
+      case 5:
+      playerObj.badGuy.setWeapon(new WarSword());
+      break;
+
+      case 6:
+      playerObj.badGuy.setWeapon(new Spear());
+      break;
+
+      case 7:
+      playerObj.badGuy.setWeapon(new BattleHammer());
       break;
     };
 }
@@ -143,8 +163,8 @@ generateBadGuy();
     playerObj.goodGuy.setWeapon(new BroadSword());
     break;
 
-    case "WarAxe":
-    playerObj.goodGuy.setWeapon(new WarAxe());
+    case "BattleAxe":
+    playerObj.goodGuy.setWeapon(new BattleAxe());
     break;
   };
 
