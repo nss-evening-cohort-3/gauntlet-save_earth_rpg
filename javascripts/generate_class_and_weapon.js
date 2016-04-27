@@ -85,6 +85,11 @@ randomAssignClassToGoodGuy = function(){
     break;
   };
   playerObj.goodGuy.generateClass();
+  if(playerObj.goodGuy.species=== "Elf"){
+    $("#selectWeapon.btn__text").html("Select Spell");
+  } else {
+    $("#selectWeapon.btn__text").html("Select Weapon");
+  }
   console.log("randomly generated ", playerObj.goodGuy.species, playerObj.goodGuy.class.name);
 }
 
