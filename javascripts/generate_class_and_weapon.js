@@ -166,6 +166,26 @@ generateBadGuy();
     case "BattleAxe":
     playerObj.goodGuy.setWeapon(new BattleAxe());
     break;
+
+    case "Spear":
+    playerObj.goodGuy.setWeapon(new Spear());
+    break;
+
+    case "WarSword":
+    playerObj.goodGuy.setWeapon(new WarSword());
+    break;
+
+    case "BattleHammer":
+    playerObj.goodGuy.setWeapon(new BattleHammer());
+    break;
+
+    case "Hatchet":
+    playerObj.goodGuy.setWeapon(new Hatchet());
+    break;
+
+    case "Flail":
+    playerObj.goodGuy.setWeapon(new Flail());
+    break;
   };
 
 })
