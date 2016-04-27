@@ -26,6 +26,7 @@ $("#classesSelection").click(function(event){
     playerObj.goodGuy.class = new originalGauntlet.GuildHall[event.target.id]();
     countBonusIn(playerObj.goodGuy);
     $("#selectWeapon.btn__text").html("Select Weapon");
+    $("#weaponOrSpell").html("Weapon: ")
     break;
 
     case "Shaman":
@@ -46,6 +47,7 @@ $("#classesSelection").click(function(event){
     playerObj.goodGuy.class = new originalGauntlet.GuildHall[event.target.id]();
     countBonusIn(playerObj.goodGuy);
     $("#selectWeapon.btn__text").html("Select Weapon");
+    $("#weaponOrSpell").html("Weapon: ")
     break;
 
     case "surpriseMe":
@@ -87,8 +89,10 @@ randomAssignClassToGoodGuy = function(){
   playerObj.goodGuy.generateClass();
   if(playerObj.goodGuy.species=== "Elf"){
     $("#selectWeapon.btn__text").html("Select Spell");
+    $("#weaponOrSpell").html("Spell: ")
   } else {
     $("#selectWeapon.btn__text").html("Select Weapon");
+    $("#weaponOrSpell").html("Weapon: ")
   }
   console.log("randomly generated ", playerObj.goodGuy.species, playerObj.goodGuy.class.name);
 }
