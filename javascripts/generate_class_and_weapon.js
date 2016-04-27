@@ -219,10 +219,10 @@ $("#selectClass").click(function(){
 
     $("#load_Combatants").click(function(){
       $("#playerWeapon").html(playerObj.goodGuy.weapon.name+", ");
-      $("#playerWeaponDamage").html(playerObj.goodGuy.weapon.damage);
+      $("#playerWeaponDamage").html(playerObj.goodGuy.weapon.damageRange);
 
       $("#orcWeapon").html(playerObj.badGuy.weapon.name+", ");
-      $("#orcWeaponDamage").html(playerObj.badGuy.weapon.damage);
+      $("#orcWeaponDamage").html(playerObj.badGuy.weapon.damageRange);
 
       return playerObj;
     })

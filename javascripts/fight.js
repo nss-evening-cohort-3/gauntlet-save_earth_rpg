@@ -39,10 +39,11 @@ $("#attack").click(function(){
 function enemyAttack() {
     //checks for 1-h weapons, mulitplies them by 2
     if (enemy.weapon.hands === 1){
-        player.health = (player.health - (enemy.weapon.damage * 2));
+        player.health = (player.health - (Math.floor(Math.random() * 7) + enemy.weapon.damage));
+        player.health = (player.health - (Math.floor(Math.random() * 7) + enemy.weapon.damage));
         $("#playerHealth").html(player.health.toString());
     } else {
-        player.health = (player.health - enemy.weapon.damage);
+        player.health = (player.health - (Math.floor(Math.random() * 5) + enemy.weapon.damage));
         $("#playerHealth").html(player.health.toString());
     }
 };
@@ -50,10 +51,11 @@ function enemyAttack() {
 function playerAttack() {
     //checks for 1-h weapons, mulitplies them by 2
     if (player.weapon.hands === 1){
-        enemy.health = (enemy.health - (player.weapon.damage * 2));
+        enemy.health = (enemy.health - (Math.floor(Math.random() * 7) + player.weapon.damage));
+        enemy.health = (enemy.health - (Math.floor(Math.random() * 7) + player.weapon.damage));
         $("#orcHealth").html(enemy.health.toString());
     } else {
-        enemy.health = (enemy.health - player.weapon.damage);
+        enemy.health = (enemy.health - (Math.floor(Math.random() * 5) + player.weapon.damage));
         $("#orcHealth").html(enemy.health.toString());
     }
 };

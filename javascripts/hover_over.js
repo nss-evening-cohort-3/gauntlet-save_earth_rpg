@@ -126,7 +126,7 @@ $("#selectWeapon").click(function(){
   //Hover over Dagger
   $("#Dagger").hover(function(){
     showInfo = new Dagger();
-    $("#Dagger").append(`<span class="badge">Damage +${showInfo.damage}</span>`)
+    $("#Dagger").append(`<span class="badge">Damage ${showInfo.damageRange}</span>`)
     .append(`<span class="badge">Number of Hands Required =${showInfo.hands}</span>`);
   });
   $("#Dagger").mouseleave(function(){
@@ -136,7 +136,7 @@ $("#selectWeapon").click(function(){
     //Hover Over Broadsword
   $("#BroadSword").hover(function(){
     showInfo = new BroadSword();
-    $("#BroadSword").append(`<span class="badge">Damage +${showInfo.damage}</span>`)
+    $("#BroadSword").append(`<span class="badge">Damage ${showInfo.damageRange}</span>`)
     .append(`<span class="badge">Number of Hands Required =${showInfo.hands}</span>`);
   });
   $("#BroadSword").mouseleave(function(){
@@ -146,7 +146,7 @@ $("#selectWeapon").click(function(){
     //Hover Over Battle Axe
   $("#BattleAxe").hover(function(){
     showInfo = new BattleAxe();
-    $("#BattleAxe").append(`<span class="badge">Damage +${showInfo.damage}</span>`)
+    $("#BattleAxe").append(`<span class="badge">Damage ${showInfo.damageRange}</span>`)
     .append(`<span class="badge">Number of Hands Required =${showInfo.hands}</span>`);
   });
   $("#BattleAxe").mouseleave(function(){
@@ -156,7 +156,7 @@ $("#selectWeapon").click(function(){
   //Hover Over WarSword
   $("#WarSword").hover(function(){
     showInfo = new WarSword();
-    $("#WarSword").append(`<span class="badge">Damage +${showInfo.damage}</span>`)
+    $("#WarSword").append(`<span class="badge">Damage ${showInfo.damageRange}</span>`)
     .append(`<span class="badge">Number of Hands Required =${showInfo.hands}</span>`);
   });
   $("#WarSword").mouseleave(function(){
@@ -166,7 +166,7 @@ $("#selectWeapon").click(function(){
   //Hover Over Spear
   $("#Spear").hover(function(){
     showInfo = new Spear();
-    $("#Spear").append(`<span class="badge">Damage +${showInfo.damage}</span>`)
+    $("#Spear").append(`<span class="badge">Damage ${showInfo.damageRange}</span>`)
     .append(`<span class="badge">Number of Hands Required =${showInfo.hands}</span>`);
   });
   $("#Spear").mouseleave(function(){
@@ -176,7 +176,7 @@ $("#selectWeapon").click(function(){
   //Hover Over Flail
   $("#Flail").hover(function(){
     showInfo = new Flail();
-    $("#Flail").append(`<span class="badge">Damage +${showInfo.damage}</span>`)
+    $("#Flail").append(`<span class="badge">Damage ${showInfo.damageRange}</span>`)
     .append(`<span class="badge">Number of Hands Required =${showInfo.hands}</span>`);
   });
   $("#Flail").mouseleave(function(){
@@ -186,7 +186,7 @@ $("#selectWeapon").click(function(){
   //Hover Over Hatchet
   $("#Hatchet").hover(function(){
     showInfo = new Hatchet();
-    $("#Hatchet").append(`<span class="badge">Damage +${showInfo.damage}</span>`)
+    $("#Hatchet").append(`<span class="badge">Damage ${showInfo.damageRange}</span>`)
     .append(`<span class="badge">Number of Hands Required =${showInfo.hands}</span>`);
   });
   $("#Hatchet").mouseleave(function(){
@@ -196,7 +196,7 @@ $("#selectWeapon").click(function(){
   //Hover Over BattleHammer
   $("#BattleHammer").hover(function(){
     showInfo = new BattleHammer();
-    $("#BattleHammer").append(`<span class="badge">Damage +${showInfo.damage}</span>`)
+    $("#BattleHammer").append(`<span class="badge">Damage ${showInfo.damageRange}</span>`)
     .append(`<span class="badge">Number of Hands Required =${showInfo.hands}</span>`);
   });
   $("#BattleHammer").mouseleave(function(){
