@@ -1,4 +1,5 @@
 var globalSpecies = "";
+var globalWeaponIndicator="";
 
 var Gauntlet = (function(originalGauntlet){
   /*-------------------------
@@ -187,14 +188,13 @@ generateBadGuy();
     playerObj.goodGuy.setWeapon(new Flail());
     break;
   };
-
+globalWeaponIndicator= playerObj.goodGuy.weapon.name;
 })
+
  $("#spellSelection").click(function(event){
       playerObj.goodGuy.setWeapon(new originalGauntlet.SpellBook.Sphere());
+      globalWeaponIndicator= playerObj.goodGuy.weapon.name;
  })
-
-
-// NEED TO GENERATE SPELL??
 
 
 
@@ -206,18 +206,19 @@ generateBadGuy();
 $("#selectClass").click(function(){
   var playerName=$("#player-name").val();
 
-  //capture player className and health after clicking select weapon
-  $("#selectWeapon").click(function(){
+  //capture player className and health
+  //with weapon
+  $("#load_Combatants").click(function(){
+    if(globalWeaponIndicator !==""){
+      //goodGuy's
+    
+      $("#playerInfo").html(playerName+" the "+playerObj.goodGuy.species+" "+playerObj.goodGuy.class.name);
+      $("#playerHealth").html(playerObj.goodGuy.health);
 
-    //goodGuy's
-    $("#playerInfo").html(playerName+" the "+playerObj.goodGuy.species+" "+playerObj.goodGuy.class.name);
-    $("#playerHealth").html(playerObj.goodGuy.health);
+      //badGuy's
+      $("#orcInfo").html(playerObj.badGuy.species+" "+playerObj.badGuy.class.name);
+      $("#orcHealth").html(playerObj.badGuy.health);
 
-    //badGuy's
-    $("#orcInfo").html(playerObj.badGuy.species+" "+playerObj.badGuy.class.name);
-    $("#orcHealth").html(playerObj.badGuy.health);
-
-    $("#load_Combatants").click(function(){
       $("#playerWeapon").html(playerObj.goodGuy.weapon.name+", ");
       $("#playerWeaponDamage").html(playerObj.goodGuy.weapon.damageRange);
 
@@ -225,17 +226,28 @@ $("#selectClass").click(function(){
       $("#orcWeaponDamage").html(playerObj.badGuy.weapon.damageRange);
 
       return playerObj;
-    })
+    };
+  })
 
-    $("#load_Combatants_spell").click(function(){
+  //with spell
+  $("#load_Combatants_spell").click(function(){
+    if(globalWeaponIndicator !==""){
+      //goodGuy's
+      $("#playerInfo").html(playerName+" the "+playerObj.goodGuy.species+" "+playerObj.goodGuy.class.name);
+      $("#playerHealth").html(playerObj.goodGuy.health);
+
+      //badGuy's
+      $("#orcInfo").html(playerObj.badGuy.species+" "+playerObj.badGuy.class.name);
+      $("#orcHealth").html(playerObj.badGuy.health);
+
       $("#playerWeapon").html(playerObj.goodGuy.weapon.name+" of "+playerObj.goodGuy.weapon.type+", ");
       $("#playerWeaponDamage").html(playerObj.goodGuy.weapon.damage);
       $("#orcWeapon").html(playerObj.badGuy.weapon.name+", ");
       $("#orcWeaponDamage").html(playerObj.badGuy.weapon.damage);
 
       return playerObj;
-    })
-  });
+    };
+  })
 })
 
 
