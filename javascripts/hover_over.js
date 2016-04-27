@@ -7,259 +7,212 @@ var Gauntlet = (function(originalGauntlet){
 $("#selectClass").click(function(){
  var showInfo;
 
-  // Initiate jQuery ToolTip 
-  $(function() {
-  $('[data-toggle="tooltip"]').tooltip()
-  });
-  
-  //Hover Over Warrior
-  $("#Warrior").hover(
-  function() {
+  //Hover over warrior
+  $("#Warrior").hover(function(){
     showInfo = new Gauntlet.GuildHall.Warrior();
-    $("#Warrior").attr("data-toggle", "tooltip");
-    $("#Warrior").attr("data-placement", "top");
-    $("#Warrior").attr("title", `HealthBonus of +${showInfo.healthBonus} StrengthBonus of +${showInfo.strengthBonus}`);
-    });
+    $("#Warrior").append(`<span class="badge">HealthBonus +${showInfo.healthBonus}</span>`)
+    .append(`<span class="badge">StrengthBonus +${showInfo.strengthBonus}</span>`);
+  });
+  $("#Warrior").mouseleave(function(){
+    $(".badge").remove();
+  });
 
-  //Hover Over Valkyrie
-    $("#Valkyrie").hover(
-  function() {
+    //Hover Over Valkyrie
+  $("#Valkyrie").hover(function(){
     showInfo = new Gauntlet.GuildHall.Valkyrie();
-    $("#Valkyrie").attr("data-toggle", "tooltip");
-    $("#Valkyrie").attr("data-placement", "top");
-    $("#Valkyrie").attr("title", `HealthBonus of +${showInfo.healthBonus} StrengthBonus of +${showInfo.strengthBonus}`);
-    });
+    $("#Valkyrie").append(`<span class="badge">HealthBonus +${showInfo.healthBonus}</span>`)
+    .append(`<span class="badge">StrengthBonus +${showInfo.strengthBonus}</span>`);
+  });
+  $("#Valkyrie").mouseleave(function(){
+    $(".badge").remove();
+  });
 
-  //Hover Over Berserker
-  $("#Berserker").hover(
-  function() {
+    //Hover Over Berserker
+  $("#Berserker").hover(function(){
     showInfo = new Gauntlet.GuildHall.Berserker();
-    $("#Berserker").attr("data-toggle", "tooltip");
-    $("#Berserker").attr("data-placement", "top");
-    $("#Berserker").attr("title", `HealthBonus of +${showInfo.healthBonus} StrengthBonus of +${showInfo.strengthBonus}`);
-    });
+    $("#Berserker").append(`<span class="badge">HealthBonus +${showInfo.healthBonus}</span>`)
+    .append(`<span class="badge">StrengthBonus +${showInfo.strengthBonus}</span>`);
+  });
+  $("#Berserker").mouseleave(function(){
+    $(".badge").remove();
+  });
 
-  //Hover Over Monk
-  $("#Monk").hover(
-  function() {
+    //Hover Over Monk
+  $("#Monk").hover(function(){
     showInfo = new Gauntlet.GuildHall.Monk();
-    $("#Monk").attr("data-toggle", "tooltip");
-    $("#Monk").attr("data-placement", "top");
-    $("#Monk").attr("title", `HealthBonus of +${showInfo.healthBonus} StrengthBonus of +${showInfo.strengthBonus}`);
-    });
+    $("#Monk").append(`<span class="badge">HealthBonus +${showInfo.healthBonus}</span>`)
+    .append(`<span class="badge">StrengthBonus +${showInfo.strengthBonus}</span>`);
+  });
+  $("#Monk").mouseleave(function(){
+    $(".badge").remove();
+  });
 
-  //Hover Over Shaman
-  $("#Shaman").hover(
-  function() {
+    //Hover Over Shaman
+  $("#Shaman").hover(function(){
     showInfo = new Gauntlet.GuildHall.Shaman();
-    $("#Shaman").attr("data-toggle", "tooltip");
-    $("#Shaman").attr("data-placement", "top");
-    $("#Shaman").attr("title", `HealthBonus of +${showInfo.healthBonus} StrengthBonus of +${showInfo.strengthBonus}`);
-    });
+    $("#Shaman").append(`<span class="badge">HealthBonus +${showInfo.healthBonus}</span>`)
+    .append(`<span class="badge">StrengthBonus +${showInfo.strengthBonus}</span>`);
+  });
+  $("#Shaman").mouseleave(function(){
+    $(".badge").remove();
+  });
 
-  //Hover Over Wizard
-  $("#Wizard").hover(
-  function() {
+    //Hover Over Wizard
+  $("#Wizard").hover(function(){
     showInfo = new Gauntlet.GuildHall.Wizard();
-    $("#Wizard").attr("data-toggle", "tooltip");
-    $("#Wizard").attr("data-placement", "top");
-    $("#Wizard").attr("title", `HealthBonus of +${showInfo.healthBonus} StrengthBonus of +${showInfo.strengthBonus}`);
-    });
+    $("#Wizard").append(`<span class="badge">HealthBonus +${showInfo.healthBonus}</span>`)
+    .append(`<span class="badge">StrengthBonus +${showInfo.strengthBonus}</span>`);
+  });
+  $("#Wizard").mouseleave(function(){
+    $(".badge").remove();
+  });
 
-  //Hover Over Sorcerer
-  $("#Sorcerer").hover(
-  function() {
+    //Hover Over Sorcerer
+  $("#Sorcerer").hover(function(){
     showInfo = new Gauntlet.GuildHall.Sorcerer();
-    $("#Sorcerer").attr("data-toggle", "tooltip");
-    $("#Sorcerer").attr("data-placement", "top");
-    $("#Sorcerer").attr("title", `HealthBonus of +${showInfo.healthBonus} StrengthBonus of +${showInfo.strengthBonus}`);
-    });
+    $("#Sorcerer").append(`<span class="badge">HealthBonus +${showInfo.healthBonus}</span>`)
+    .append(`<span class="badge">StrengthBonus +${showInfo.strengthBonus}</span>`);
+  });
+  $("#Sorcerer").mouseleave(function(){
+    $(".badge").remove();
+  });
 
-  //Hover Over Conjurer
-  $("#Conjurer").hover(
-  function() {
+    //Hover Over Conjurer
+  $("#Conjurer").hover(function(){
     showInfo = new Gauntlet.GuildHall.Conjurer();
-    $("#Conjurer").attr("data-toggle", "tooltip");
-    $("#Conjurer").attr("data-placement", "top");
-    $("#Conjurer").attr("title", `HealthBonus of +${showInfo.healthBonus} StrengthBonus of +${showInfo.strengthBonus}`);
-    });
+    $("#Conjurer").append(`<span class="badge">HealthBonus +${showInfo.healthBonus}</span>`)
+    .append(`<span class="badge">StrengthBonus +${showInfo.strengthBonus}</span>`);
+  });
+  $("#Conjurer").mouseleave(function(){
+    $(".badge").remove();
+  });
 
-  //Hover Over Thief
-  $("#Thief").hover(
-  function() {
+    //Hover Over Thief
+  $("#Thief").hover(function(){
     showInfo = new Gauntlet.GuildHall.Thief();
-    $("#Thief").attr("data-toggle", "tooltip");
-    $("#Thief").attr("data-placement", "top");
-    $("#Thief").attr("title", `HealthBonus of +${showInfo.healthBonus} StrengthBonus of +${showInfo.strengthBonus}`);
-    });
+    $("#Thief").append(`<span class="badge">HealthBonus +${showInfo.healthBonus}</span>`)
+    .append(`<span class="badge">StrengthBonus +${showInfo.strengthBonus}</span>`);
+  });
+  $("#Thief").mouseleave(function(){
+    $(".badge").remove();
+  });
 
-  //Hover Over Ninja
-  $("#Ninja").hover(
-  function() {
+    //Hover Over Ninja
+  $("#Ninja").hover(function(){
     showInfo = new Gauntlet.GuildHall.Ninja();
-    $("#Ninja").attr("data-toggle", "tooltip");
-    $("#Ninja").attr("data-placement", "top");
-    $("#Ninja").attr("title", `HealthBonus of +${showInfo.healthBonus} StrengthBonus of +${showInfo.strengthBonus}`);
-    });
+    $("#Ninja").append(`<span class="badge">HealthBonus +${showInfo.healthBonus}</span>`)
+    .append(`<span class="badge">StrengthBonus +${showInfo.strengthBonus}</span>`);
+  });
+  $("#Ninja").mouseleave(function(){
+    $(".badge").remove();
+  });
 
-  //Hover Over Assassin
-  $("#Assassin").hover(
-  function() {
+    //Hover Over Assassin
+  $("#Assassin").hover(function(){
     showInfo = new Gauntlet.GuildHall.Assassin();
-    $("#Assassin").attr("data-toggle", "tooltip");
-    $("#Assassin").attr("data-placement", "top");
-    $("#Assassin").attr("title", `HealthBonus of +${showInfo.healthBonus} StrengthBonus of +${showInfo.strengthBonus}`);
-    });
+    $("#Assassin").append(`<span class="badge">HealthBonus +${showInfo.healthBonus}</span>`)
+    .append(`<span class="badge">StrengthBonus +${showInfo.strengthBonus}</span>`);
+  });
+  $("#Assassin").mouseleave(function(){
+    $(".badge").remove();
+  });
+
 });
 
 /*-----Weapon's Hover Over-----*/
 $("#selectWeapon").click(function(){ 
   var showInfo;
 
-  // //Hover Over Dagger
-  // $("#Dagger").hover(
-  // function() {
-  //   showInfo = new Dagger();
-  //   $("#Dagger").attr("data-toggle", "tooltip");
-  //   $("#Dagger").attr("data-placement", "top");
-  //   $("#Dagger").attr("title", `Damage bonus of +${showInfo.damage} Number of hands ${showInfo.hands}`);
-  //   });
-
-  // //Hover Over Broadsword
-  // $("#Broadsword").hover(
-  // function() {
-  //   showInfo = new BroadSword();
-  //   $("#Broadsword").attr("data-toggle", "tooltip");
-  //   $("#Broadsword").attr("data-placement", "top");
-  //   $("#Broadsword").attr("title", `Damage bonus of +${showInfo.damage} Number of hands ${showInfo.hands}`);
-  //   });
-
-  // //Hover Over WarAxe
-  // $("#WarAxe").hover(
-  // function() {
-  //   showInfo = new WarAxe();
-  //   $("#WarAxe").attr("data-toggle", "tooltip");
-  //   $("#WarAxe").attr("data-placement", "top");
-  //   $("#WarAxe").attr("title", `Damage bonus of +${showInfo.damage} Number of hands ${showInfo.hands}`);
-  //   });
- 
-  // $( "#WarAxe.fade" ).hover(function() {
-  //   $(this).fadeOut(100);
-  //   $(this).fadeIn(500);
-  // });
-  
-  //Hover Over Dagger
-  $("#Dagger").hover(
-  function() {
+  //Hover over Dagger
+  $("#Dagger").hover(function(){
     showInfo = new Dagger();
-    $(this).append($("<span>Damage: "+showInfo.damage+"<br> Hand(s): "+showInfo.hands+"</span>"));
-  }, function() {
-    $(this).find("span:last").remove();
-    });
- 
-  $( "#Dagger.fade" ).hover(function() {
-    $(this).fadeOut(100);
-    $(this).fadeIn(500);
+    $("#Dagger").append(`<span class="badge">Damage +${showInfo.damage}</span>`)
+    .append(`<span class="badge">Number of Hands Required =${showInfo.hands}</span>`);
+  });
+  $("#Dagger").mouseleave(function(){
+    $(".badge").remove();
   });
 
-  //Hover Over Flail
-  $("#Flail").hover(
-  function() {
-    showInfo = new Flail();
-    $(this).append($("<span>Damage: "+showInfo.damage+"<br> Hand(s): "+showInfo.hands+"</span>"));
-  }, function() {
-    $(this).find("span:last").remove();
-    });
- 
-  $( "#Flail.fade" ).hover(function() {
-    $(this).fadeOut(100);
-    $(this).fadeIn(500);
+    //Hover Over Broadsword
+  $("#BroadSword").hover(function(){
+    showInfo = new BroadSword();
+    $("#BroadSword").append(`<span class="badge">Damage +${showInfo.damage}</span>`)
+    .append(`<span class="badge">Number of Hands Required =${showInfo.hands}</span>`);
+  });
+  $("#BroadSword").mouseleave(function(){
+    $(".badge").remove();
   });
 
-  //Hover Over Hatchet
-  $("#Hatchet").hover(
-  function() {
-    showInfo = new Hatchet();
-    $(this).append($("<span>Damage: "+showInfo.damage+"<br> Hand(s): "+showInfo.hands+"</span>"));
-  }, function() {
-    $(this).find("span:last").remove();
-    });
-
-  $( "#Hatchet.fade" ).hover(function() {
-    $(this).fadeOut(100);
-    $(this).fadeIn(500);
+    //Hover Over Battle Axe
+  $("#BattleAxe").hover(function(){
+    showInfo = new BattleAxe();
+    $("#BattleAxe").append(`<span class="badge">Damage +${showInfo.damage}</span>`)
+    .append(`<span class="badge">Number of Hands Required =${showInfo.hands}</span>`);
+  });
+  $("#BattleAxe").mouseleave(function(){
+    $(".badge").remove();
   });
 
   //Hover Over WarSword
-  $("#WarSword").hover(
-  function() {
+  $("#WarSword").hover(function(){
     showInfo = new WarSword();
-    $(this).append($("<span>Damage: "+showInfo.damage+"<br> Hand(s): "+showInfo.hands+"</span>"));
-  }, function() {
-    $(this).find("span:last").remove();
-    });
- 
-  $( "#WarSword.fade" ).hover(function() {
-    $(this).fadeOut(100);
-    $(this).fadeIn(500);
+    $("#WarSword").append(`<span class="badge">Damage +${showInfo.damage}</span>`)
+    .append(`<span class="badge">Number of Hands Required =${showInfo.hands}</span>`);
   });
-
-  //Hover Over Battle Axe
-  $("#BattleAxe").hover(
-  function() {
-    showInfo = new BattleAxe();
-    $(this).append($("<span>Damage: "+showInfo.damage+"<br> Hand(s): "+showInfo.hands+"</span>"));
-  }, function() {
-    $(this).find("span:last").remove();
-    });
- 
-  $( "#BattleAxe.fade" ).hover(function() {
-    $(this).fadeOut(100);
-    $(this).fadeIn(500);
+  $("#WarSword").mouseleave(function(){
+    $(".badge").remove();
   });
 
   //Hover Over Spear
-  $("#Spear").hover(
-  function() {
+  $("#Spear").hover(function(){
     showInfo = new Spear();
-    $(this).append($("<span>Damage: "+showInfo.damage+"<br> Hand(s): "+showInfo.hands+"</span>"));
-  }, function() {
-    $(this).find("span:last").remove();
-    });
- 
-  $( "#Spear.fade" ).hover(function() {
-    $(this).fadeOut(100);
-    $(this).fadeIn(500);
+    $("#Spear").append(`<span class="badge">Damage +${showInfo.damage}</span>`)
+    .append(`<span class="badge">Number of Hands Required =${showInfo.hands}</span>`);
+  });
+  $("#Spear").mouseleave(function(){
+    $(".badge").remove();
   });
 
-  //Hover Over Battle Hammer
-  $("#BattleHammer").hover(
-  function() {
+  //Hover Over Flail
+  $("#Flail").hover(function(){
+    showInfo = new Flail();
+    $("#Flail").append(`<span class="badge">Damage +${showInfo.damage}</span>`)
+    .append(`<span class="badge">Number of Hands Required =${showInfo.hands}</span>`);
+  });
+  $("#Flail").mouseleave(function(){
+    $(".badge").remove();
+  });
+
+  //Hover Over Hatchet
+  $("#Hatchet").hover(function(){
+    showInfo = new Hatchet();
+    $("#Hatchet").append(`<span class="badge">Damage +${showInfo.damage}</span>`)
+    .append(`<span class="badge">Number of Hands Required =${showInfo.hands}</span>`);
+  });
+  $("#Hatchet").mouseleave(function(){
+    $(".badge").remove();
+  });
+
+  //Hover Over BattleHammer
+  $("#BattleHammer").hover(function(){
     showInfo = new BattleHammer();
-    $(this).append($("<span>Damage: "+showInfo.damage+"<br> Hand(s): "+showInfo.hands+"</span>"));
-  }, function() {
-    $(this).find("span:last").remove();
-    });
- 
-  $( "#BattleHammer.fade" ).hover(function() {
-    $(this).fadeOut(100);
-    $(this).fadeIn(500);
+    $("#BattleHammer").append(`<span class="badge">Damage +${showInfo.damage}</span>`)
+    .append(`<span class="badge">Number of Hands Required =${showInfo.hands}</span>`);
+  });
+  $("#BattleHammer").mouseleave(function(){
+    $(".badge").remove();
   });
 
-
-  //Hover Over Broad Sword
-  $("#BroadSword").hover(
-  function() {
-    showInfo = new BroadSword();
-    $(this).append($("<span>Damage: "+showInfo.damage+"<br> Hand(s): "+showInfo.hands+"</span>"));
-  }, function() {
-    $(this).find("span:last").remove();
-    });
- 
-  $( "#BroadSword.fade" ).hover(function() {
-    $(this).fadeOut(100);
-    $(this).fadeIn(500);
+    //Hover Over Sphere Spell
+  $("#sphere").hover(function(){
+    showInfo = new Gauntlet.SpellBook.Sphere();
+    $("#sphere").append(`<span class="badge">Damage +${showInfo.damage}</span>`)
+    .append(`<span class="badge">Number of Hands Required =${showInfo.hands}</span>`);
   });
+  $("#sphere").mouseleave(function(){
+    $(".badge").remove();
+  });  
+
 });
 };
 return originalGauntlet;
