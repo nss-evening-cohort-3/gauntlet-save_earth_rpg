@@ -168,24 +168,24 @@ generateBadGuy();
     playerObj.goodGuy.setWeapon(new BattleAxe());
     break;
 
-    case "Flail":
-    playerObj.goodGuy.setWeapon(new Flail());
-    break;
-
-    case "Hatchet":
-    playerObj.goodGuy.setWeapon(new Hatchet());
-    break;
-
     case "Spear":
     playerObj.goodGuy.setWeapon(new Spear());
+    break;
+
+    case "WarSword":
+    playerObj.goodGuy.setWeapon(new WarSword());
     break;
 
     case "BattleHammer":
     playerObj.goodGuy.setWeapon(new BattleHammer());
     break;
 
-    case "WarAxe":
-    playerObj.goodGuy.setWeapon(new WarAxe());
+    case "Hatchet":
+    playerObj.goodGuy.setWeapon(new Hatchet());
+    break;
+
+    case "Flail":
+    playerObj.goodGuy.setWeapon(new Flail());
     break;
   };
 globalWeaponIndicator= playerObj.goodGuy.weapon.name;
@@ -220,10 +220,10 @@ $("#selectClass").click(function(){
       $("#orcHealth").html(playerObj.badGuy.health);
 
       $("#playerWeapon").html(playerObj.goodGuy.weapon.name+", ");
-      $("#playerWeaponDamage").html(playerObj.goodGuy.weapon.damage);
+      $("#playerWeaponDamage").html(playerObj.goodGuy.weapon.damageRange);
 
       $("#orcWeapon").html(playerObj.badGuy.weapon.name+", ");
-      $("#orcWeaponDamage").html(playerObj.badGuy.weapon.damage);
+      $("#orcWeaponDamage").html(playerObj.badGuy.weapon.damageRange);
 
       return playerObj;
     };
