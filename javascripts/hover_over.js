@@ -1,10 +1,7 @@
 var Gauntlet = (function(originalGauntlet){
  originalGauntlet.hoverOver= function(){
 
-  
-
 /*-----Classes' Hover Over-----*/ 
-$("#selectClass").click(function(){
  var showInfo;
 
   //Hover over warrior
@@ -117,11 +114,8 @@ $("#selectClass").click(function(){
     $(".badge").remove();
   });
 
-});
 
 /*-----Weapon's Hover Over-----*/
-$("#selectWeapon").click(function(){ 
-  var showInfo;
 
   //Hover over Dagger
   $("#Dagger").hover(function(){
@@ -212,9 +206,9 @@ $("#selectWeapon").click(function(){
   $("#sphere").mouseleave(function(){
     $(".badge").remove();
   });  
+}
 
-});
-};
 return originalGauntlet;
+
 }(Gauntlet)||{});
 Gauntlet.hoverOver();
