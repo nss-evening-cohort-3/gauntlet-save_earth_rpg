@@ -25,7 +25,7 @@ $(document).ready(function() {
         moveAlong = (globalSpecies !== "");
         break;
       case "card--battleground":
-        moveAlong = ($("#player-name").val() !== "");
+        moveAlong = (globalWeaponIndicator!== "");
         break;
     }
 

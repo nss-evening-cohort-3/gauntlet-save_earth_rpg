@@ -157,7 +157,7 @@ generateBadGuy();
  $("#weaponSelection").click(function(event){
   switch(event.target.id){
     case "Dagger":
-    playerObj.goodGuy.setWeapon(new Gauntlet.SpellBook.Sphere);
+    playerObj.goodGuy.setWeapon(new Dagger());
     break;
 
     case "BroadSword":
@@ -167,11 +167,33 @@ generateBadGuy();
     case "BattleAxe":
     playerObj.goodGuy.setWeapon(new BattleAxe());
     break;
-  };
 
+    case "Flail":
+    playerObj.goodGuy.setWeapon(new Flail());
+    break;
+
+    case "Hatchet":
+    playerObj.goodGuy.setWeapon(new Hatchet());
+    break;
+
+    case "Spear":
+    playerObj.goodGuy.setWeapon(new Spear());
+    break;
+
+    case "BattleHammer":
+    playerObj.goodGuy.setWeapon(new BattleHammer());
+    break;
+
+    case "WarAxe":
+    playerObj.goodGuy.setWeapon(new WarAxe());
+    break;
+  };
+globalWeaponIndicator= playerObj.goodGuy.weapon.name;
 })
+
  $("#spellSelection").click(function(event){
       playerObj.goodGuy.setWeapon(new originalGauntlet.SpellBook.Sphere());
+      globalWeaponIndicator= playerObj.goodGuy.weapon.name;
  })
 
 
@@ -187,40 +209,45 @@ $("#selectClass").click(function(){
   //capture player className and health
   //with weapon
   $("#load_Combatants").click(function(){
+    if(globalWeaponIndicator !==""){
       //goodGuy's
-    $("#playerInfo").html(playerName+" the "+playerObj.goodGuy.species+" "+playerObj.goodGuy.class.name);
-    $("#playerHealth").html(playerObj.goodGuy.health);
+    
+      $("#playerInfo").html(playerName+" the "+playerObj.goodGuy.species+" "+playerObj.goodGuy.class.name);
+      $("#playerHealth").html(playerObj.goodGuy.health);
 
-    //badGuy's
-    $("#orcInfo").html(playerObj.badGuy.species+" "+playerObj.badGuy.class.name);
-    $("#orcHealth").html(playerObj.badGuy.health);
+      //badGuy's
+      $("#orcInfo").html(playerObj.badGuy.species+" "+playerObj.badGuy.class.name);
+      $("#orcHealth").html(playerObj.badGuy.health);
 
-    $("#playerWeapon").html(playerObj.goodGuy.weapon.name+", ");
-    $("#playerWeaponDamage").html(playerObj.goodGuy.weapon.damage);
+      $("#playerWeapon").html(playerObj.goodGuy.weapon.name+", ");
+      $("#playerWeaponDamage").html(playerObj.goodGuy.weapon.damage);
 
-    $("#orcWeapon").html(playerObj.badGuy.weapon.name+", ");
-    $("#orcWeaponDamage").html(playerObj.badGuy.weapon.damage);
+      $("#orcWeapon").html(playerObj.badGuy.weapon.name+", ");
+      $("#orcWeaponDamage").html(playerObj.badGuy.weapon.damage);
 
       return playerObj;
-    })
+    };
+  })
 
   //with spell
   $("#load_Combatants_spell").click(function(){
+    if(globalWeaponIndicator !==""){
       //goodGuy's
-    $("#playerInfo").html(playerName+" the "+playerObj.goodGuy.species+" "+playerObj.goodGuy.class.name);
-    $("#playerHealth").html(playerObj.goodGuy.health);
+      $("#playerInfo").html(playerName+" the "+playerObj.goodGuy.species+" "+playerObj.goodGuy.class.name);
+      $("#playerHealth").html(playerObj.goodGuy.health);
 
-    //badGuy's
-    $("#orcInfo").html(playerObj.badGuy.species+" "+playerObj.badGuy.class.name);
-    $("#orcHealth").html(playerObj.badGuy.health);
+      //badGuy's
+      $("#orcInfo").html(playerObj.badGuy.species+" "+playerObj.badGuy.class.name);
+      $("#orcHealth").html(playerObj.badGuy.health);
 
-    $("#playerWeapon").html(playerObj.goodGuy.weapon.name+" of "+playerObj.goodGuy.weapon.type+", ");
-    $("#playerWeaponDamage").html(playerObj.goodGuy.weapon.damage);
-    $("#orcWeapon").html(playerObj.badGuy.weapon.name+", ");
-    $("#orcWeaponDamage").html(playerObj.badGuy.weapon.damage);
+      $("#playerWeapon").html(playerObj.goodGuy.weapon.name+" of "+playerObj.goodGuy.weapon.type+", ");
+      $("#playerWeaponDamage").html(playerObj.goodGuy.weapon.damage);
+      $("#orcWeapon").html(playerObj.badGuy.weapon.name+", ");
+      $("#orcWeaponDamage").html(playerObj.badGuy.weapon.damage);
 
       return playerObj;
-    })
+    };
+  })
 })
 
 
